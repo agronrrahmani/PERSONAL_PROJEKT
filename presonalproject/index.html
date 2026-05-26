@@ -34,34 +34,66 @@
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234">
+      <img src="images/hoodie.png">
+
       <div class="product-info">
         <h3>Hoodie</h3>
         <p>$59</p>
-        <a href="cart.html" class="btn">Add to Cart</a>
+
+        <button class="btn"
+        onclick="addToCart('Hoodie', 59, 'images/hoodie.png')">
+          Add to Cart
+        </button>
       </div>
     </div>
 
     <div class="product-card">
       <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+
       <div class="product-info">
         <h3>Sneakers</h3>
         <p>$89</p>
-        <a href="cart.html" class="btn">Add to Cart</a>
+
+        <button class="btn"
+        onclick="addToCart('Sneakers', 89, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff')">
+          Add to Cart
+        </button>
       </div>
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
+      <img src="images/streetjacked.png">
+
       <div class="product-info">
         <h3>Street Jacket</h3>
         <p>$74</p>
-        <a href="cart.html" class="btn">Add to Cart</a>
+
+        <button class="btn"
+        onclick="addToCart('Street Jacket', 74, 'images/streetjacked.png')">
+          Add to Cart
+        </button>
       </div>
     </div>
 
   </div>
 </section>
+
+<script>
+function addToCart(name, price, image) {
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+    name: name,
+    price: price,
+    image: image
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert(name + " added to cart!");
+}
+</script>
 
 </body>
 </html>
