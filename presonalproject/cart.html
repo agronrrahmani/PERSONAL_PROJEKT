@@ -22,69 +22,44 @@
 </nav>
 
 <section class="products">
+
   <h2>Your Cart 🛒</h2>
 
-  <div class="product-grid" id="cart-items"></div>
+  <div class="product-grid">
 
-  <h2 id="total" style="text-align:center; margin-top:30px;">
-    Total: $0
-  </h2>
-</section>
+    <div class="product-card">
+      <img src="images/hoodie.png">
 
-<script>
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-function renderCart() {
-
-  const cartItems = document.getElementById("cart-items");
-  const totalText = document.getElementById("total");
-
-  cartItems.innerHTML = "";
-
-  let total = 0;
-
-  if (cart.length === 0) {
-    cartItems.innerHTML = "<p>Your cart is empty.</p>";
-    totalText.innerHTML = "Total: $0";
-    return;
-  }
-
-  cart.forEach((item, index) => {
-
-    total += item.price;
-
-    cartItems.innerHTML += `
-      <div class="product-card">
-        <img src="${item.image}">
-
-        <div class="product-info">
-          <h3>${item.name}</h3>
-          <p>$${item.price}</p>
-
-          <button class="btn" onclick="removeItem(${index})">
-            Remove
-          </button>
-        </div>
+      <div class="product-info">
+        <h3>Hoodie</h3>
+        <p>$59</p>
       </div>
-    `;
-  });
+    </div>
 
-  totalText.innerHTML = `Total: $${total}`;
-}
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
 
-function removeItem(index) {
+      <div class="product-info">
+        <h3>Sneakers</h3>
+        <p>$89</p>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="images/streetjacked.png">
 
-  cart.splice(index, 1);
+      <div class="product-info">
+        <h3>Street Jacket</h3>
+        <p>$74</p>
+      </div>
+    </div>
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+  </div>
 
-  renderCart();
-}
+  <h2 style="text-align:center; margin-top:30px;">
+    Total: $222
+  </h2>
 
-renderCart();
-
-</script>
+</section>
 
 </body>
 </html>

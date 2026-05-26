@@ -30,56 +30,107 @@
 </section>
 
 <section class="products">
-  <h2>Featured Products</h2>
+
+  <h2>Products</h2>
 
   <div class="product-grid">
 
+    <!-- HOODIE -->
+
     <div class="product-card">
-      <img src="images/hoodie.png">
+
+      <a href="#hoodie-popup">
+        <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234">
+      </a>
 
       <div class="product-info">
+
         <h3>Hoodie</h3>
+
         <p>$59</p>
 
-        <button class="btn"
-        onclick="addToCart('Hoodie', 59, 'images/hoodie.png')">
+        <a href="cart.html" class="btn">
           Add to Cart
-        </button>
+        </a>
+
       </div>
+
     </div>
 
+    <div id="hoodie-popup" class="popup">
+
+      <a href="#" class="close"></a>
+
+      <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234">
+
+    </div>
+
+    <!-- SNEAKERS -->
+
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+
+      <a href="#sneakers-popup">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+      </a>
 
       <div class="product-info">
+
         <h3>Sneakers</h3>
+
         <p>$89</p>
 
-        <button class="btn"
-        onclick="addToCart('Sneakers', 89, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff')">
+        <a href="cart.html" class="btn">
           Add to Cart
-        </button>
+        </a>
+
       </div>
+
     </div>
 
+    <div id="sneakers-popup" class="popup">
+
+      <a href="#" class="close"></a>
+
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+
+    </div>
+
+    <!-- JACKET -->
+
     <div class="product-card">
-      <img src="images/streetjacked.png">
+
+      <a href="#jacket-popup">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
+      </a>
 
       <div class="product-info">
+
         <h3>Street Jacket</h3>
+
         <p>$74</p>
 
-        <button class="btn"
-        onclick="addToCart('Street Jacket', 74, 'images/streetjacked.png')">
+        <a href="cart.html" class="btn">
           Add to Cart
-        </button>
+        </a>
+
       </div>
+
+    </div>
+
+    <div id="jacket-popup" class="popup">
+
+      <a href="#" class="close"></a>
+
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
+
     </div>
 
   </div>
+
 </section>
 
 <script>
+
 function addToCart(name, price, image) {
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -94,7 +145,14 @@ function addToCart(name, price, image) {
 
   alert(name + " added to cart!");
 }
+
 </script>
+
+<div class="image-popup" id="popup">
+
+  <img id="popup-img">
+
+</div>
 
 </body>
 </html>
