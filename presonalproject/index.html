@@ -70,7 +70,7 @@
     <div class="product-card">
 
       <a href="#sneakers-popup">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+        <img src="images/sneakres.png">
       </a>
 
       <div class="product-info">
@@ -91,7 +91,7 @@
 
       <a href="#" class="close"></a>
 
-      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+      <img src="images/sneakres.png">
 
     </div>
 
@@ -129,24 +129,6 @@
 
 </section>
 
-<script>
-
-function addToCart(name, price, image) {
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  cart.push({
-    name: name,
-    price: price,
-    image: image
-  });
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  alert(name + " added to cart!");
-}
-
-</script>
 
 <div class="image-popup" id="popup">
 
